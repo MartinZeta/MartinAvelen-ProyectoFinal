@@ -1,0 +1,11 @@
+{% block content %}
+    {% for curso in cursos %}
+        <ul>
+            <li>
+                {{ curso.nombre }}
+                {{ curso.comision }}
+                {{ curso.profesor }}
+            </li>
+        </ul>
+    {% endfor %}
+{% endblock content %}
