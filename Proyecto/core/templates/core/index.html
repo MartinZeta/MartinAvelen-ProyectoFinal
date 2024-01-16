@@ -1,12 +1,17 @@
 {% extends 'core/base.html' %}
 
-{% block content %}
-    <h1>Entrega</h1>
+{% block title %}
+    Proyecto | Inicio    
+{% endblock title %}
 
-    <button><a href="{% url 'estudiante_list' %}">Ver Estudiantes</a></button>
-    <button><a href="{% url 'profesor_list' %}">Ver Profesores</a></button>
-    <button><a href="{% url 'profesor_create' %}">Crear Profesores</a></button>
-    <button><a href="{% url 'estudiante_create' %}">Crear Estudiantes</a></button>
-    <button><a href="{% url 'curso_list' %}">Ver Cursos</a></button>
-    <button><a href="{% url 'curso_create' %}">Crear Cursos</a></button>
+{% block content %}
+    <h1>Proyecto Final</h1>
+    <h2>Inicio</h2>
+
+    <button><a href="{% url 'core:estudiante_list' %}">Ver Estudiantes</a></button>
+    <button><a href="{% url 'core:profesor_list' %}">Ver Profesores</a></button>
+    <button><a href="{% url 'core:profesor_create' %}">Crear Profesores</a></button>
+    <button><a href="{% url 'core:estudiante_create' %}">Crear Estudiantes</a></button>
+    <button><a href="{% url 'core:curso_list' %}">Ver Cursos</a></button>
+    <button><a href="{% url 'core:curso_create' %}">Crear Cursos</a></button>
 {% endblock content %}

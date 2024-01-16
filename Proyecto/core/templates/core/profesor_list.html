@@ -1,7 +1,16 @@
 {% extends 'core/base.html' %}
 
+{% block title %}
+    Lista de profesores   
+{% endblock title %}
+
 
 {% block content %}
+
+<h2>Profesores</h2>
+<h3>Profesor: Lista</h3>
+
+
     {% for profesor in profesores %}
         <ul>
             <li>
@@ -11,4 +20,7 @@
             </li>
         </ul>
     {% endfor %}
+
+<button><a href="{% url 'core:index' %}">Atrás</a></button> 
+
 {% endblock content %}
