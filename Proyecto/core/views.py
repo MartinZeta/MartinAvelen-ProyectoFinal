@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.urls import reverse
 
 # Create your views here.
 
@@ -20,7 +21,7 @@ def profesor_create(request):
         form = forms.ProfesorForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect("profesor_list")
+            return redirect(reverse("core:profesor_list"))
     else:
         form = forms.ProfesorForm()
     return render(request, "core/profesor_create.html", {"form": form})
@@ -38,7 +39,7 @@ def estudiante_create(request):
         form = forms.EstudianteForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect("estudiante_list")
+            return redirect(reverse("core:estudiante_list"))
     else:
         form = forms.EstudianteForm()
     return render(request, "core/estudiantes_create.html", {"form": form})
@@ -56,7 +57,7 @@ def curso_create(request):
         form = forms.CursoForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect("curso_list")
+            return redirect(reverse("core:curso_list"))
     else:
         form = forms.CursoForm()
     return render(request, "core/curso_create.html", {"form": form})

@@ -5,7 +5,7 @@ app_name = "core"
 
 urlpatterns = [
     path("", views.index, name="index"),
-    path("profesor/list", views.profesor_list, name="profesor_list"),
+    path("profesor/list/", views.profesor_list, name="profesor_list"),
     path("estudiante/list/", views.estudiante_list, name="estudiante_list"),
     path("profesor/create/", views.profesor_create, name="profesor_create"),
     path("estudiante/create/", views.estudiante_create, name="estudiante_create"),
