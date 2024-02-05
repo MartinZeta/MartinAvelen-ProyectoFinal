@@ -18,7 +18,7 @@
                     <a class="nav-link {% if request.resolver_match.url_name == 'estudiante_list' %}active{% endif %}" href="{% url 'core:estudiante_list' %}">Lista de Estudiantes</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {% if request.resolver_match.url_name == 'curso_list' %}active{% endif %}" href="{% url 'core:curso_list' %}">Lista de Cursos</a>
+                    <a class="nav-link {% if request.resolver_match.url_name == 'producto_list_tops' %}active{% endif %}" href="{% url 'core:producto_list_tops' %}">Tops</a>
                 </li>
                 <!-- Agregar más enlaces según sea necesario -->
             </ul>

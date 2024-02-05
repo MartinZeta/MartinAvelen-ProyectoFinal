@@ -1,0 +1,20 @@
+{% extends 'core/base.html' %}
+
+{% block title %}
+    Productos | Inicio
+{% endblock title %}
+
+{% block content %}
+  <div class="container">
+    <h1 class="mt-4">Productos</h1>
+
+    <div class="card text-center">
+      <div class="card-body">
+        <h5 class="card-title">Productos</h5>
+        <div class="d-flex justify-content-center gap-4">
+          <a href="{% url 'producto:producto_list' %}" class="btn btn-primary w-50">Ver Productos</a>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock content %}

@@ -1,10 +1,16 @@
 from django.shortcuts import render, redirect
 from django.urls import reverse
-
+from django.views.generic import (
+    CreateView,
+    DeleteView,
+    DetailView,
+    ListView,
+    UpdateView,
+)
 # Create your views here.
 
 from . import forms, models
-
+from .models import *
 
 def index(request):
     return render(request, "core/index.html")
@@ -64,3 +70,10 @@ def curso_create(request):
 
 
 
+def indexproducto(request):
+    return render(request, "core/indexproducto.html")
+
+class ProductoListTops(ListView):
+    model = Producto
+    context_object_name = "object_list"
+    template_name = "core/producto_list_tops.html"
