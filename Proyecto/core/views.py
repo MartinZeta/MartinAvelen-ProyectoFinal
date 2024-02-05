@@ -17,7 +17,7 @@ def index(request):
 
 
 def profesor_list(request):
-    consulta = models.Profesor.objects.all()
+    consulta = Profesor.objects.all()
     contexto = {"profesores": consulta}
     return render(request, "core/profesor_list.html", contexto)
 
@@ -35,7 +35,7 @@ def profesor_create(request):
 #-----------------------------------------------------------------
 
 def estudiante_list(request):
-    consulta = models.Estudiante.objects.all()
+    consulta = Estudiante.objects.all()
     contexto = {"estudiantes": consulta}
     return render(request, "core/estudiante_list.html", contexto)
 
@@ -54,7 +54,7 @@ def estudiante_create(request):
 #----------------------------------------------------------------
 
 def curso_list(request):
-    consulta = models.Curso.objects.all()
+    consulta = Curso.objects.all()
     contexto = {"cursos": consulta}
     return render(request, "core/curso_list.html", contexto)
 
