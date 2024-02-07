@@ -12,13 +12,13 @@
                     <a class="nav-link {% if request.resolver_match.url_name == 'index' %}active{% endif %}" href="{% url 'core:index' %}">Inicio</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {% if request.resolver_match.url_name == 'profesor_list' %}active{% endif %}" href="{% url 'core:profesor_list' %}">Lista de Profesores</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link {% if request.resolver_match.url_name == 'estudiante_list' %}active{% endif %}" href="{% url 'core:estudiante_list' %}">Lista de Estudiantes</a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link {% if request.resolver_match.url_name == 'producto_list_tops' %}active{% endif %}" href="{% url 'core:producto_list_tops' %}">Tops</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {% if request.resolver_match.url_name == 'producto_list_jeans' %}active{% endif %}" href="{% url 'core:producto_list_jeans' %}">Jeans</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {% if request.resolver_match.url_name == 'producto_list_vestidos' %}active{% endif %}" href="{% url 'core:producto_list_vestidos' %}">Vestidos</a>
                 </li>
                 <!-- Agregar más enlaces según sea necesario -->
             </ul>

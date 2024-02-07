@@ -57,7 +57,7 @@ class Producto(models.Model):
     cantidad = models.FloatField()
     descripcion = models.TextField(null=True, blank=True, verbose_name = "descripción")
     fecha_actualizacion = models.DateField(null=True, blank=True, default=timezone.now(), editable=False, verbose_name = "fecha de actualización")
-    imagenProducto = models.ImageField(null=True, blank=True, upload_to="core/static/media/")
+    imagenProducto = models.ImageField(null=True, blank=True, upload_to="")
     
     def __str__(self):
         return f"{self.nombre} ({self.talle}) ${self.precio:.2f}"
