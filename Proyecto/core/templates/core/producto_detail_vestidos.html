@@ -1,0 +1,32 @@
+{% extends 'core/base.html' %}
+
+{% block title %}
+    Detalle Producto
+{% endblock title %}
+
+{% block content %}
+  <div class="container">
+    <h1 class="mt-4">Detalle de Producto</h1>
+
+    <div class="card mt-4">
+      <div class="card-body">
+        <h5 class="card-title">{{ vestidos.nombre }}</h5>
+        {% if vestidos.imagenProducto %}
+            <img src="{{ vestidos.imagenProducto.url }}" alt="{{ vestidos.nombre }}" style="max-width: 100px;">
+        {% endif %}
+        <p class="card-release" style="color: #0aa724;">${{ vestidos.precio }}</p>
+        <p class="card-text">Talle: {{ vestidos.talle }}</p>
+        <p class="card-text">Cantidad: {{ vestidos.cantidad }}</p>
+        <p class="card-text">Fecha de publicacion: {{ vestidos.fecha_actualizacion }}</p>
+        <p class="card-text">Descripcion: {{ vestidos.descripcion }}</p>
+      </div>
+    </div>
+
+    <div class="mt-4">
+        <a href="{% url 'core:producto_list_vestidos' %}" class="btn btn-primary">Volver a la Lista</a>
+        <a href="{% url 'core:producto_update_vestidos' vestidos.id %}" class="btn btn-warning">Editar</a>
+        <a href="{% url 'core:producto_delete_vestidos' vestidos.id %}" class="btn btn-danger">Eliminar</a>
+        
+    </div>
+</div>
+{% endblock content %}

@@ -9,7 +9,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
-                    <a class="nav-link {% if request.resolver_match.url_name == 'index' %}active{% endif %}" href="{% url 'core:index' %}">Inicio</a>
+                    <a class="nav-link {% if request.path == '/' %} active {% endif %}" aria-current="page" href="{% url 'core:index' %}">Inicio</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link {% if request.resolver_match.url_name == 'producto_list_tops' %}active{% endif %}" href="{% url 'core:producto_list_tops' %}">Tops</a>
@@ -20,8 +20,32 @@
                 <li class="nav-item">
                     <a class="nav-link {% if request.resolver_match.url_name == 'producto_list_vestidos' %}active{% endif %}" href="{% url 'core:producto_list_vestidos' %}">Vestidos</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link {% if request.resolver_match.url_name == 'about'%} active {% endif %}" href="{% url 'core:about' %}">Nosotros</a>
+                </li>
+
+                {% if user.is_authenticated %}
+                <li class="nav-item">
+                    <a class="nav-link"> Hola <strong>{{request.user.username}}</strong>!</a>
+                </li>
+                <li class="nav-item">
+                    <form action=" {% url 'core:logout' %}" method="post">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-dark">Logout</button>
+                    </form>
+                </li>
+                {% else %}
+                <li class="nav-item">
+                    <a class="nav-link {% if request.resolver_match.url_name == 'login' %} active {% endif %}" href="{% url 'core:login' %}">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {% if request.resolver_match.url_name == 'register'%} active {% endif %}" href="{% url 'core:register' %}">Register</a>
+                </li>
+                {% endif %}
                 <!-- Agregar más enlaces según sea necesario -->
             </ul>
         </div>
     </div>
 </nav>
+               
+

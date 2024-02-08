@@ -1,0 +1,26 @@
+{% extends 'core/base.html' %}
+
+{% block title %}
+    Confirmar Eliminación de Producto
+{% endblock title %}
+
+{% block content %}
+  <div class="container">
+    <h1 class="mt-4">Confirmar Eliminación de Producto</h1>
+
+    <div class="card mt-4">
+      <div class="card-body">
+        <h5 class="card-title">¿Estás seguro de que deseas eliminar el producto "{{ vestidos.nombre }}"?</h5>
+        <p class="card-text">Esta acción no se puede deshacer.</p>
+      </div>
+    </div>
+
+    <div class="mt-4">
+      <form method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">Eliminar</button>
+        <a href="{% url 'core:producto_detail_vestidos' vestidos.id %}" class="btn btn-secondary">Cancelar</a>
+      </form>
+    </div>
+  </div>
+{% endblock content %}

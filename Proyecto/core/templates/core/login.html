@@ -1,0 +1,29 @@
+{% extends 'core/base.html' %}
+
+{% block title %}
+    Inlay | Login
+{% endblock title %}
+
+{% block content %}
+<div class="container">
+    <h1 class="mt-4">Iniciar Sesion</h1>
+
+    <form method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+        {# este input es para que nos rediriga directamente al inicio una vez que se inicia la sesion #}
+        {% if form.errors %}
+            <p class="label label-danger">
+                Tu usuario y contraseña no coinciden 
+                Intenta nuevamente.
+            </p>
+        {% endif %}
+        <input type="hidden" name="next" value= "{% url 'core:index' %}">
+
+      <button type="submit" class="btn btn-primary">Iniciar Sesion</button>
+      <a href="{% url 'core:index' %}" class="btn btn-secondary">Cancelar</a>
+    </form>
+    <p>Aun no tienes cuenta? <a href="{% url 'core:register' %}">Regístrate</a></p>
+  </div>
+
+{% endblock content %}

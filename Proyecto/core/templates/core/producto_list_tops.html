@@ -6,13 +6,15 @@
 
 {% block content %}
   <div class="container text-center">
-    <h1 class="mt-4">TOPS</h1>
+    <h1 class="mt-4">Tops</h1>
 
     <table class="table table-striped">
       <thead>
         <tr>
           <th scope="col">Nombre</th>
-          <th scope="col">Precio</th>         
+          <th scope="col">Precio</th>
+          <th scope="col"></th>
+          <th scope="col"></th>        
           
         </tr>
       </thead>
@@ -26,7 +28,11 @@
                 <img src="{{ object.imagenProducto.url }}" alt="{{ object.nombre }}" style="max-width: 100px;">
               {% endif %}
             </td>
-            <td><a href="{% url 'core:producto_update_tops' object.id %}" class="btn btn-warning">Editar</a></td>
+            <td>
+              <a href="{% url 'core:producto_update_tops' object.id %}" class="btn btn-warning">Editar</a>
+              <a href="{% url 'core:producto_detail_tops' object.id %}" class="btn btn-primary me-2">Ver</a>
+              <a href="{% url 'core:producto_delete_tops' object.id %}" class="btn btn-danger me-2">Eliminar</a>
+            </td>
           </tr>
         {% empty %}
           <tr>
