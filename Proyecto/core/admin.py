@@ -1,11 +1,6 @@
 from django.contrib import admin
 from .models import *
 # Register your models here.
-admin.site.register(Curso)
-admin.site.register(CursoEstudiantes)
-admin.site.register(Estudiante)
-admin.site.register(Profesor)
-
 class ProductoCategoriaAdmin(admin.ModelAdmin):
     list_display = ('nombre', 'descripcion')
     

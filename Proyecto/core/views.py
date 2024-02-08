@@ -26,23 +26,23 @@ class CustomLoginView(LoginView):
     template_name = 'core/login.html'
 
 class Register(FormView):
-    template_name = 'core/register.html'
-    form_class = CustomUserCreationForm
-    redirect_autheticated_user = True
-    success_url = reverse_lazy('core:index')
+    def get(self, request):
+        form = CustomUserCreationForm()
+        return render(request, "core/register.html", {"form": form})
 
-    def form_valid(self, form):
-        user = form.save()
-        if user is not None:
-            login(self.request, user)
-        return super(Register, self).form_valid(form)
-
-    def get(self, *args, **kwargs):
-        if self.request.user.is_authenticated:
-            return redirect('index')
-        return super(Register, self).get(*args, **kwargs)
-
+    def post(self, request):
+        form = CustomUserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect("core:index")  # Redirecciona a la página de inicio, ajusta esto según tu configuración de URL
+        return render(request, "core/register.html", {"form": form})
 #-----------------------------------------------------------------
+class ProductoCreate(CreateView):
+    model = Producto
+    context_object_name = "form"
+    form_class = ProductoForm
+    success_url = reverse_lazy("core:producto_list_tops")
+    template_name = "core/producto_create_form.html"
 
 class ProductoListTops(ListView):
     model = Producto

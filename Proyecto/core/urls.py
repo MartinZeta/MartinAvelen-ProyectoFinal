@@ -14,6 +14,7 @@ urlpatterns = [
     path("logout/", LogoutView.as_view(template_name='core/logout.html'), name="logout"),
     path("register/", views.Register.as_view(), name="register"),
     path("about/", TemplateView.as_view(template_name="core/about.html"), name="about"),
+    path("producto/create/form", views.ProductoCreate.as_view(), name="producto_create_form"),
     #TOPS
     path("producto/list/tops/", views.ProductoListTops.as_view(), name="producto_list_tops"),
     path("producto/update/tops/<int:pk>", views.ProductoUpdateTops.as_view(), name="producto_update_tops"),

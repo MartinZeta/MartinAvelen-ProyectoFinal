@@ -5,13 +5,23 @@
 {% endblock title %}
 
 {% block content %}
+<div class="container-fluid text-center my-5">
+    <h1 class="display-4 fw-bold text-primary">¡Bienvenida a Inlay!</h1>
+    <p class="lead text-muted">Descubre las Últimas Tendencias en Ropa de Mujer</p>
+</div>
+<div>
+    <div class="mb-3 p-3 shadow-lg" style="background-color: #f7bfc4; border-radius: 10px;">
+        <h2 class="mb-0 text-center">Descubre las Últimas Novedades</h2>
+     </div>
+</div> 
+
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="3000">
     <ol class="carousel-indicators">
         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
         <li data-target="#carouselExampleIndicators" data-slide-to="1" class=""></li>
         <li data-target="#carouselExampleIndicators" data-slide-to="2" class=""></li>
     </ol>
-    <div class="carousel-inner">
+    <div class="carousel-inner rounded shadow mb-5 mb-lg-0 bg-light">
         <div class="carousel-item active">
             <img class="d-block w-100" src="https://rawgit.com/creativetimofficial/material-kit/master/assets/img/bg.jpg"
                 alt="First slide">
@@ -53,21 +63,6 @@
     </a>
 </div>
 
-<div class="container-fluid text-center my-5">
-    <h1 class="display-4 fw-bold text-primary">¡Bienvenida a Inlay!</h1>
-    <p class="lead text-muted">Descubre las Últimas Tendencias en Ropa de Mujer</p>
-</div>
-<!-- Content Row-->
-<div>
-    <div class="mb-3 p-3 shadow-lg" style="background-color: #f8d7da; border-radius: 10px;">
-        <h2 class="mb-0 text-center">Descubre las Últimas Novedades</h2>
-     </div>
-     <div class="row gx-4 gx-lg-5 justify-content-center">
-        {% include 'core/tarjeta.html' with titulo="Tarjeta 1" texto="Texto de la tarjeta 1" %}
-        {% include 'core/tarjeta.html' with titulo="Tarjeta 1" texto="Texto de la tarjeta 1" %}
-        {% include 'core/tarjeta.html' with titulo="Ropa" imagen_url="https://w7.pngwing.com/pngs/861/112/png-transparent-figure-drawing-clothing-dress-art-clothes-purple-fashion-color.png" texto="Texto de la tarjeta" %}
-    </div>
-</div>
 <!-- Footer-->
     <footer class="py-2 bg-dark fixed-bottom">
         <div class="container px-4 px-lg-5"><p class="m-0 text-center text-white">Copyright &copy; Mi sitio 2024</p></div>
